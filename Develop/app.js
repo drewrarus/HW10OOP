@@ -15,42 +15,89 @@ const Employee = require("./lib/Employee");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-let myTeam =
-let myTeamNumbers;
+
+let myTeam = [];
 inquirer.prompt({
-    type:"number"
-    message:"How many employees do you have?"
-    name: 
+  type: "number",
+  message: "How many employees do you have?",
+  name: "numberTeam",
 })
-.then 
+  .then((data) => { getuserdata(data.numberTeam) });
+const getuserdata = (myTeamNumber) => {
+  let name;
+  let id;
+  let email;
+  let role;
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is your name?"
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "What is your id number?"
+
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is your email?"
+
+    },
+    {
+      type: "list",
+      name: "role",
+      message: "What is your title?",
+      choices: [
+        "Engineer",
+        "Manager",
+        "Intern"]
+    }
+  ])
+    .then((data) => {
+      name = data.name;
+      id = data.id;
+      email = data.email;
+      role = data.role;
+
+      switch (role) {
+        case "Engineer":
+          addengineer()
+          break
+
+        case ""}
+    });
+}
 
 switch (this.role) {
-    case Engineer:
-        prompt(EngineerQuestions)
-        console.log("Engineer")
-        break;
+  case Engineer:
+    prompt()
+    console.log("Engineer")
+    break;
 
-    default:
-        break;
+  default:
+    break;
 }
 switch (this.role) {
-    case Intern:
-        prompt(InternQuestions)
-        console.log("Intern")
-        break;
+  case Intern:
+    prompt(InternQuestions)
+    console.log("Intern")
+    break;
 
-    default:
-        break;
+  default:
+    break;
 }
 switch (this.role) {
-    case Manager:
-        prompt(ManagerQuestions)
-        console.log("Manager")
-        break;
+  case Manager:
+    prompt(ManagerQuestions)
+    console.log("Manager")
+    break;
 
-    default:
-        break;
-} 
+  default:
+    break;
+}
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
@@ -71,3 +118,4 @@ switch (this.role) {
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
