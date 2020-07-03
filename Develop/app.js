@@ -62,42 +62,54 @@ const getuserdata = (myTeamNumber) => {
       email = data.email;
       role = data.role;
 
-      switch (role) {
-        case "Engineer":
-          addengineer()
-          break
+      switch (Engineer) {
+        case Engineer:
+          inquirer.prompt(
+            {
+              type: "input",
+              name: "github",
+              message: "What is your github?"
 
-        case ""}
+            })
+          break;
+
+        default:
+          break;
+      }
+      switch (Manager) {
+        case Manager:
+          school = data.school
+          inquirer.prompt(
+            {
+              type: "input",
+              name: "officeNumber",
+              message: "What is your office number?"
+
+            })
+          break;
+
+        default:
+          break;
+      }
+      switch (Intern) {
+        case Intern:
+          school = data.school
+          inquirer.prompt(
+            {
+              type: "input",
+              name: "school",
+              message: "What is your school?"
+
+            })
+          console.log(name, id, email, role, school)
+          break;
+
+        default:
+          break;
+      }
     });
 }
 
-switch (this.role) {
-  case Engineer:
-    prompt()
-    console.log("Engineer")
-    break;
-
-  default:
-    break;
-}
-switch (this.role) {
-  case Intern:
-    prompt(InternQuestions)
-    console.log("Intern")
-    break;
-
-  default:
-    break;
-}
-switch (this.role) {
-  case Manager:
-    prompt(ManagerQuestions)
-    console.log("Manager")
-    break;
-
-  default:
-    break;
-}
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
